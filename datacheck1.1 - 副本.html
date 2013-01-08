@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>QUnit Test Suite</title>
+	<link rel="stylesheet" href="../qunit/qunit.css">
+	<script src="../qunit/qunit.js"></script>
+	<!--script src="test.js"></script>
+	<script src="deepEqual.js"></script>
+	<script src="swarminject.js"></script-->
+	<script type="text/javascript" src="lib/jquery-1.8.1.js"></script>
+	<script type="text/javascript" src="lib/datacheck-1.1.js"></script>
+	<script type="text/javascript" src="data/kanData.js"></script>
+	<script type="text/javascript">
+	var port = {
+		"countTotal": "boolean",
+		"order": [					//order 作为关键字用来检测result的排序结果
+			{
+				"title":"viewCount",
+				"type":"desc"
+			}
+		],
+		"pageNo": "number",
+		"pageSize": "number",
+		"result":[{
+			"coverPath": "img",							//这个是前台要的
+			"tlength": "time",								//这个是前台要的
+			"name": "notNull",								//这个是前台要的
+			"recommendCount": function(v){
+				//console.log(this.speaker.name)				//这里可以访问还未读取出来的this.speaker.name原理是，函数加入队列，在其他属性读取完开始执行。
+				return !!(this.speaker.name + " == " + v)
+			},												//这个是前台要的
+			"speaker": {									
+				"name": "notNull"							//这个是前台要的
+			},
+			"viewCount": "number"
+		}]
+	}
+	
+		
+		//console.log(port);
+		var resultData = datacheck.deal(port, kanData);
+		console.log(resultData);
+	</script>
+</head>
+<body>
+	<div id="qunit"></div>
+	<div id="qunit-fixture">test markup</div>
+</body>
+</html>
