@@ -1,9 +1,9 @@
-var reg = require("./lib/module/reg"),
-	JSON = require("./lib/module/json");
+//var reg = require("./lib/module/reg"),
+	//JSON = require("./lib/module/json");
 
 var datatool = {};
-datatool.reg = require("./lib/module/reg");
-datatool.formater = require("./lib/module/formater");
+//datatool.reg = require("./lib/module/reg");
+//datatool.formater = require("./lib/module/formater");
 datatool.deal = require("./lib/module/deal");
 
 
