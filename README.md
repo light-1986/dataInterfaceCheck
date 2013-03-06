@@ -42,3 +42,9 @@ json的key对应源数据中的key，或者自定义的key，value赋值为一�
 			"viewCount": "number"
 		}]
 	};
+
+start
+-------------
+
+cd dataInterfaceCheck
+node init
